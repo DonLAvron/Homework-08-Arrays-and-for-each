@@ -17,12 +17,12 @@ public class Main {
         int max = inputArray1[0];
         int min = inputArray1[0];
         // Считаем сумму, максимум и минимум в одном цикле
-        for (int i = 0; i < inputArray1.length; i++) {
-            sum = sum + inputArray1[i]; // общая сумма выплат
-            if (inputArray1[i] > max) max = inputArray1[i]; // максимальная выплата
-            if (inputArray1[i] < min) min = inputArray1[i]; // минимальная выплата
+        for (int pay : inputArray1) {
+            sum = sum + pay; // общая сумма выплат
+            if (pay > max) max = pay; // максимальная выплата
+            if (pay < min) min = pay; // минимальная выплата
         }
-        double average = sum / inputArray1.length; // средняя выплата
+        double average = (double) sum / inputArray1.length; // средняя выплата
         //Записываем результаты в outputArray1 по порядку
         outputArray1[0] = sum;
         outputArray1[1] = max;
@@ -33,7 +33,7 @@ public class Main {
         System.out.println("Максимальная выплата за месяц " + max);
         System.out.println("Минимальная выплата за месяц " + min);
         System.out.println("Средняя выплата за месяц " + average);
-        // Выводим inputArray1
+        // Вывод:
         System.out.println("Input: " + Arrays.toString(inputArray1));
         System.out.println("Output: " + Arrays.toString(outputArray1));
 
@@ -43,10 +43,12 @@ public class Main {
         int[] inputArray2 = {89400, 94009, 76900, 64547, 93300};
         // Создаем выходной массив
         double[] outputArray2 = new double[5];
-        double tax = 0; // Объявляем переменную "налога"
-        for (int i = 0; i < inputArray2.length; i++) {
-            tax = inputArray2[i] * 0.13; // Вычисляем 13%
-            outputArray2[i] = tax; //Записываем результат в ячейку массива
+        int numb = 0; // Счетчик, вместо i для for
+        for (int index : inputArray2) { // Переменная со значением элемента массива
+            // Объявляем переменную налога и вычисляем 13%
+            double tax = index * 0.13;
+            outputArray2[numb] = tax; //Записываем результат в ячейку массива
+            numb++; // Обязательно увеличиваем счетчик
         }
         System.out.println("Input: " + Arrays.toString(inputArray2));
         System.out.println("Output: " +Arrays.toString(outputArray2));
@@ -55,11 +57,13 @@ public class Main {
         System.out.println("\n Задача 3");
         int[] inputArray3 = {2500, 5700, 3400, 6100, 7700}; // Входной массив
         boolean[] outputArray3 = new boolean[5];  // Выходной массив
+        int bigBonus = 0;
         // Запускаем проверку в цикле
-        for (int i = 0; i < inputArray3.length; i++) {
-            if (inputArray3[i] > 5000) {
-                outputArray3[i] = true; // В остальных случая будет false
+        for (int bonus : inputArray3) {
+            if (bonus > 5000) {
+                outputArray3[bigBonus] = true; // В остальных случая будет false
             }
+            bigBonus++;
         }
         System.out.println("Input:  " + Arrays.toString(inputArray3));
         System.out.println("Output: " + Arrays.toString(outputArray3));
