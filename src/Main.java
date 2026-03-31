@@ -19,8 +19,12 @@ public class Main {
         // Считаем сумму, максимум и минимум в одном цикле
         for (int pay : inputArray1) {
             sum = sum + pay; // общая сумма выплат
-            if (pay > max) max = pay; // максимальная выплата
-            if (pay < min) min = pay; // минимальная выплата
+            if (pay > max) {
+                max = pay; // максимальная выплата
+            }
+            if (pay < min) {
+                min = pay; // минимальная выплата
+            }
         }
         double average = (double) sum / inputArray1.length; // средняя выплата
         //Записываем результаты в outputArray1 по порядку
@@ -42,7 +46,7 @@ public class Main {
         // Создаем входной массив
         int[] inputArray2 = {89400, 94009, 76900, 64547, 93300};
         // Создаем выходной массив
-        double[] outputArray2 = new double[5];
+        double[] outputArray2 = new double[inputArray2.length];
         int numb = 0; // Счетчик, вместо i для for
         for (int index : inputArray2) { // Переменная со значением элемента массива
             // Объявляем переменную налога и вычисляем 13%
@@ -56,7 +60,7 @@ public class Main {
 
         System.out.println("\n Задача 3");
         int[] inputArray3 = {2500, 5700, 3400, 6100, 7700}; // Входной массив
-        boolean[] outputArray3 = new boolean[5];  // Выходной массив
+        boolean[] outputArray3 = new boolean[inputArray3.length];  // Выходной массив
         int bigBonus = 0;
         // Запускаем проверку в цикле
         for (int bonus : inputArray3) {
